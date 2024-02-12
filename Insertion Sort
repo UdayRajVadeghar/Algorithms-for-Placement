@@ -1,0 +1,30 @@
+//Best case = O(n)
+//worst case = O(N^2)
+
+//.Here we are sorting in basis of a window type of method where the number goes and sits in the correct poistion oif the array , this is a special type of sorting which is very popular
+and can be best used when the input size is limited and small. AThis is th efastestr for that case  .Else merge sort is way better than thois but merge sort uses recursion which is an advanced 
+topic for beginners.
+.//
+//here is the code 
+
+public class InsertionSort {
+    public static void main(String[] args) {
+
+        int[] arr = { 12 , 2 , 0 , 7};
+        int length = arr.length;
+        for(int i = 0 ; i < length ; i ++){
+            int j = i ;
+
+            while(j > 0 && arr[j-1] > arr[j]){
+                int temp = arr[j-1] ;
+                arr[j-1] = arr[j];
+                arr[j] = temp;
+                j--;
+            }
+        }
+        for(Integer element : arr){
+            System.out.print(element + " ");
+        }
+    }
+}
+
