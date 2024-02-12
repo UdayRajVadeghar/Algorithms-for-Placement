@@ -1,54 +1,59 @@
 prerequisite : Recursion , Divide and Conquer
 
 
-
 public class QuickSort {
     public static void main(String[] args) {
 
-        int[] arr = {1 ,6 , 2 , 3 , 9};
-        int low = 0 ;
+        int[] arr = {1, 9, 8, 1, 3};
+        int low = 0;
         int high = arr.length - 1;
-        quickSort(arr , low , high);
+        quickSort(arr, low, high);
 
-        for(Integer element : arr){
+        for (Integer element : arr) {
             System.out.print(element + " ");
         }
 
     }
-    public static void quickSort(int[] arr , int low , int high){
 
-        if(low < high){
-            int pivot = pivotFinder(arr , low , high);
-            quickSort(arr , low , pivot-1);
-            quickSort(arr , pivot + 1 , high);
+    public static void quickSort(int[] arr, int low, int high) {
+
+        if (low < high) {
+            int pivot = pivotFinder(arr, low, high);
+            quickSort(arr, low, pivot - 1);
+            quickSort(arr, pivot + 1, high);
         }
 
 
     }
-    public static int pivotFinder(int[] arr , int low , int high) {
 
-        int left = low ;
+    public static int pivotFinder(int[] arr, int low, int high) {
+
         int pivot = arr[low];
         int right = high;
+        int left = low;
 
-        while(left < right){
 
-            while(arr[left] < pivot){
+        while (left < right) {
+
+            while (arr[left] <= pivot && left < right) {
                 left++;
             }
-            while(arr[right] > pivot){
+            while (arr[right] > pivot) {
                 right--;
             }
 
-            int temp = arr[right];
-            arr[right] = arr[left];
-            arr[left] = temp;
 
+            if (left < right) {
+                int temp = arr[right];
+                arr[right] = arr[left];
+                arr[left] = temp;
+            }
         }
 
-        int temp1 = arr[right];
-        arr[right] = arr[left];
-        arr[left] = temp1;
+
+        arr[low] = arr[right];
+        arr[right] = pivot;
+
         return right;
 
     }
