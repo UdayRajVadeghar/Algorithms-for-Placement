@@ -1,0 +1,31 @@
+//Easiest Algorithm to implement which takes a time complexity as O(n^2)
+
+//here is the code in java 
+
+public class SelectionSort {
+    public static void main(String[] args) {
+
+        int[] arr = {7 , 8 , 6 , 4 , 12 , 1};
+        int length = arr.length;
+
+        for(int i = 0 ; i < length-1 ; i++){         //Finding out the minimum value for this index
+
+            int smallestIndex = i;
+
+            for(int j = i ; j < length ; j++){       //Checking for the smallest number's index
+                if(arr[j] < arr[smallestIndex]){
+                    smallestIndex = j;
+                }
+
+            }
+            int temp = arr[i];                      //Swapping
+            arr[i] = arr[smallestIndex];
+            arr[smallestIndex] = temp;
+
+        }    
+        for(Integer element : arr ){                //Printing out the array
+            System.out.print(element + " ");
+        }
+
+    }
+}
