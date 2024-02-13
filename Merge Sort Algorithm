@@ -1,0 +1,67 @@
+//This is the implementation of merge sort and it is one of the most important algorithms for sorting because when the input is not too big it takes less time and is faster than 
+//than quick sort , its known for its simplicity and divide and conquer property
+//time complexity : O(Nlog(N))
+//space complexity : uses extra arrays which will be approximately equal to O(N)
+
+public class MergeSort {
+    public static void main(String[] args) {
+
+
+        int[] arr = { 12 ,3 , 8 , 9 };
+
+        int low = 0 ;
+        int high = arr.length - 1;
+        mergeSort(arr, low , high);
+
+        for(int i = 0 ; i < arr.length ; i++){
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    public static void mergeSort(int[] arr , int low , int high){
+
+        if(low == high){
+            return;
+        }
+
+        int mid = (high + low)/2;
+        mergeSort(arr , low , mid);
+        mergeSort(arr , mid + 1 , high);
+        swapping(arr , low , mid , high);
+    }
+
+    public static void swapping(int[] arr , int low ,int mid , int high){
+
+        int left = low;
+        int right = high;
+        int tempmid = mid;
+        int count = 0;
+        int[] temp = new int[right - left + 1];
+        while(left <= mid && tempmid + 1 <= high){
+            if(arr[left] <= arr[tempmid+1]){
+                 temp[count] = arr[left];
+                 count++;
+                 left++;
+            }else{
+                temp[count] = arr[tempmid + 1];
+                count++;
+                tempmid++;
+            }
+
+        }
+        while(left <= mid){
+            temp[count] = arr[left];
+            left++;
+        }
+        while(tempmid+1 <= right){
+            temp[count] = arr[tempmid+1];
+            tempmid++;
+            count++;
+        }
+
+        for(int i = 0 ; i < temp.length ; i++){
+            arr[low + i] = temp[i];
+        }
+
+    }
+}
