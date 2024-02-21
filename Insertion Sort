@@ -1,7 +1,7 @@
 //Best case = O(n)
 //worst case = O(N^2)
 
-//.Here we are sorting in basis of a window type of method where the number goes and sits in the correct poistion oif the array , this is a special type of sorting which is very popular
+//.Here we are sorting in basis of a window type of method where the number goes and sits in the correct poistion of the array , this is a special type of sorting which is very popular
 and can be best used when the input size is limited and small. This is the fastest for that case  .Else merge sort is way better than thois but merge sort uses recursion which is an advanced 
 topic for beginners.
 
