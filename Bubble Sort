@@ -6,7 +6,7 @@ public class BubbleSort {
     public static void main(String[] args) {
         int[] arr = { 99 , 7 , 9 , 88 ,88 , 11, 89 , 6 , 1};
         int length = arr.length;
-        for(int i = length - 1 ; i >= 0 ; i --){
+        for(int i = length-1 ; i >= 0 ; i --){
 
             for(int j = 0 ; j < i ; j++){
 
