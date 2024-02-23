@@ -10,7 +10,7 @@ topic for beginners.
 public class InsertionSort {
     public static void main(String[] args) {
 
-        int[] arr = { 12 , 2 , 0 , 7};
+        int[] arr = { 12 , 2 ,  0 , 7};
         int length = arr.length;
         for(int i = 0 ; i < length ; i ++){
             int j = i ;
